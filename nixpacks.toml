@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["caddy"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "caddy file-server --root dist --listen :3000 --try-files {path} /index.html"
